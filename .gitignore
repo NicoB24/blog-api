@@ -1,0 +1,42 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.sqlite3
+db.sqlite3
+
+# Static and media files
+staticfiles/
+media/
+
+# IDE / Editor folders
+.vscode/
+.idea/
+*.swp
+
+# macOS system files
+.DS_Store
+
+# Mypy cache
+.mypy_cache/
+
+# Pytest cache
+.pytest_cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+
+# Optional: Django migrations (usually recommended to commit, so commented out)
+# blog/migrations/
