@@ -106,3 +106,11 @@ docker-compose exec web isort .
 docker-compose exec web flake8 .
 docker-compose exec web mypy .
 ```
+
+## Future Improvements
+- Authentication and Permissions (JWT or OAuth2-based authentication, add per-user access control)
+- API Pagination and Filtering
+- Validation and Error Handling (Improve error responses add field-level validations)
+- API documentation
+- Logging & Monitoring
+- Add production and testing settings
