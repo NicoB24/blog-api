@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 from typing import List
 
@@ -75,11 +76,26 @@ WSGI_APPLICATION = "blog_api.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Load secret key from environment
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "unsafe-dev-key")
+
+# Set debug from env
+DEBUG = os.getenv("DEBUG", "False") == "True"
+
+# Allowed hosts (split by space)
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost").split(" ")
+
+# PostgreSQL config via env
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.getenv("DB_NAME", "blog_db"),
+        "USER": os.getenv("DB_USER", "postgres"),
+        "PASSWORD": os.getenv("DB_PASSWORD", "postgres"),
+        "HOST": os.getenv("DB_HOST", "db"),
+        "PORT": "5432",
     }
 }
 

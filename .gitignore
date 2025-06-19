@@ -8,6 +8,7 @@ venv/
 env/
 .venv/
 .env/
+.env
 
 # Django stuff:
 *.log
@@ -37,6 +38,3 @@ media/
 # Coverage reports
 htmlcov/
 .coverage
-
-# Optional: Django migrations (usually recommended to commit, so commented out)
-# blog/migrations/
