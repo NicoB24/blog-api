@@ -58,7 +58,7 @@ The API will be available at:
 
 
 
-## Endpoing calling examples using curl
+## Endpoint calling examples using curl
 
 ### Get all posts
 ```
@@ -84,3 +84,25 @@ curl -X POST http://127.0.0.1:8000/api/posts/1/comments/ \
 -d '{"content": "This is a new comment."}'
 ```
 
+## 🧪 Run Tests
+```
+docker-compose exec web pytest
+```
+
+## 🧹 Code Quality
+```
+docker-compose exec web bash -c "
+  black . &&
+  isort . &&
+  flake8 . &&
+  mypy .
+"
+```
+
+or you can run them individually
+```
+docker-compose exec web black .
+docker-compose exec web isort .
+docker-compose exec web flake8 .
+docker-compose exec web mypy .
+```
