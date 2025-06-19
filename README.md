@@ -60,24 +60,24 @@ The API will be available at:
 
 ## Endpoing calling examples using curl
 
-# Get all posts
+### Get all posts
 ```
 curl -X GET http://127.0.0.1:8000/api/posts/
 ```
 
-# Create a new post
+### Create a new post
 ```
 curl -X POST http://127.0.0.1:8000/api/posts/ \
 -H "Content-Type: application/json" \
 -d '{"title": "New Post", "content": "This is the content of the post."}'
 ```
 
-# Get a single post
+### Get a single post
 ```
 curl -X GET http://127.0.0.1:8000/api/posts/1/
 ```
 
-# Add a comment to a post
+### Add a comment to a post
 ```
 curl -X POST http://127.0.0.1:8000/api/posts/1/comments/ \
 -H "Content-Type: application/json" \
