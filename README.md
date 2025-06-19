@@ -30,9 +30,56 @@ The core functionality of this platform includes managing blog posts and their a
 
 1. **Clone the repository**
 
-```bash
+```
 git clone https://github.com/NicoB24/blog-api.git
 cd blog-api
+```
 
 
-1. **Create a .env file**
+2. **Create a .env file**
+DJANGO_SECRET_KEY=your-secret-key
+DEBUG=True
+ALLOWED_HOSTS=localhost 127.0.0.1
+DB_NAME=blog_db
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB_HOST=db
+```
+
+3. **Build and run the project**
+
+```
+docker-compose up --build
+```
+
+The API will be available at:
+👉 http://localhost:8000/api/posts/
+
+
+
+## Endpoing calling examples using curl
+
+# Get all posts
+```
+curl -X GET http://127.0.0.1:8000/api/posts/
+```
+
+# Create a new post
+```
+curl -X POST http://127.0.0.1:8000/api/posts/ \
+-H "Content-Type: application/json" \
+-d '{"title": "New Post", "content": "This is the content of the post."}'
+```
+
+# Get a single post
+```
+curl -X GET http://127.0.0.1:8000/api/posts/1/
+```
+
+# Add a comment to a post
+```
+curl -X POST http://127.0.0.1:8000/api/posts/1/comments/ \
+-H "Content-Type: application/json" \
+-d '{"content": "This is a new comment."}'
+```
+
