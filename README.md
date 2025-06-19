@@ -37,6 +37,7 @@ cd blog-api
 
 
 2. **Create a .env file**
+```
 DJANGO_SECRET_KEY=your-secret-key
 DEBUG=True
 ALLOWED_HOSTS=localhost 127.0.0.1
